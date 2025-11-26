@@ -1,85 +1,95 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brinquedos - Kids Império</title>
-    <!-- link do CSS -->
     <link rel="stylesheet" href="brinquedos.css">
 </head>
 <body>
 
-   <!-- MENU SUPERIOR -->
 <header>
     <nav class="nav">
       <a href="inicio.html" class="nav-link">início</a>
       <a href="brinquedos.html" class="nav-link">brinquedos</a>
       <a href="#" class="nav-link">carrinho</a>
-     <a href="#" class="nav-link">login</a>
+      <a href="#" class="nav-link" id="loginBtn">login</a>
     </nav>
 </header>
 
+<main class="container">
+    <aside class="filtros">
+        <h2>Filtrar</h2>
+        <h3>Categoria</h3>
+        <label><input type="checkbox" value="acao" class="filtro-categoria"> Ação</label><br>
+        <label><input type="checkbox" value="boneca" class="filtro-categoria"> Bonecas</label><br>
+        <label><input type="checkbox" value="classico" class="filtro-categoria"> Clássicos</label><br>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="container">
-        <!-- FILTROS NA ESQUERDA -->
-        <aside class="filtros">
-            <h2>Filtrar</h2>
+        <h3>Idade</h3>
+        <label><input type="checkbox" value="3" class="filtro-idade"> A partir de 3 anos</label><br>
+        <label><input type="checkbox" value="6" class="filtro-idade"> A partir de 6 anos</label><br>
+    </aside>
 
-            <!-- filtro por categoria -->
-            <h3>Categoria</h3>
-            <label><input type="checkbox" value="acao" class="filtro-categoria"> Ação</label><br>
-            <label><input type="checkbox" value="boneca" class="filtro-categoria"> Bonecas</label><br>
-            <label><input type="checkbox" value="classico" class="filtro-categoria"> Clássicos</label><br>
+    <section class="produtos">
+        <div class="produto" data-categoria="acao" data-idade="6">
+            <img src="d:\Users\DESKTOP\Downloads\2463276.jpg" alt="Carrinho de Corrida">
+            <h4>Carrinho de Corrida</h4>
+            <p>R$ 59,90</p>
+        </div>
 
-            <!-- filtro por idade -->
-            <h3>Idade</h3>
-            <label><input type="checkbox" value="3" class="filtro-idade"> A partir de 3 anos</label><br>
-            <label><input type="checkbox" value="6" class="filtro-idade"> A partir de 6 anos</label><br>
-        </aside>
+        <div class="produto" data-categoria="boneca" data-idade="3">
+            <img src="d:\Users\DESKTOP\Downloads\20033544.jpg" alt="Boneca Princesa">
+            <h4>Boneca Princesa</h4>
+            <p>R$ 89,90</p>
+        </div>
 
-        <!-- LISTA DE PRODUTOS -->
-        <section class="produtos">
-            <div class="produto" data-categoria="acao" data-idade="6">
-                <img src="img/carro.jpg" alt="Carrinho de Corrida">
-                <h4>Carrinho de Corrida</h4>
-                <p>R$ 59,90</p>
-            </div>
+        <div class="produto" data-categoria="classico" data-idade="6">
+            <img src="d:\Users\DESKTOP\Downloads\12903554.jpg" alt="Jogo de Tabuleiro">
+            <h4>Jogo de Tabuleiro</h4>
+            <p>R$ 119,90</p>
+        </div>
 
-            <div class="produto" data-categoria="boneca" data-idade="3">
-                <img src="img/boneca.jpg" alt="Boneca Princesa">
-                <h4>Boneca Princesa</h4>
-                <p>R$ 89,90</p>
-            </div>
+        <div class="produto" data-categoria="acao" data-idade="3">
+            <img src="d:\Users\DESKTOP\Downloads\f7f4696eb9cb1b75ad3e7bd4338cd6bb.jpg" alt="Boneco Super-Herói">
+            <h4>Boneco Super-Herói</h4>
+            <p>R$ 49,90</p>
+        </div>
 
-            <div class="produto" data-categoria="classico" data-idade="6">
-                <img src="img/jogo.jpg" alt="Jogo de Tabuleiro">
-                <h4>Jogo de Tabuleiro</h4>
-                <p>R$ 119,90</p>
-            </div>
+        <div class="produto" data-categoria="boneca" data-idade="3">
+            <img src="d:\Users\DESKTOP\Downloads\16797766.jpg" alt="boneco fofao">
+            <h4>Boneco fofao</h4>
+            <p>R$ 49,90</p>
+        </div>
+    </section>
+</main>
 
-            <div class="produto" data-categoria="acao" data-idade="3">
-                <img src="img/superheroi.jpg" alt="Boneco Super-Herói">
-                <h4>Boneco Super-Herói</h4>
-                <p>R$ 49,90</p>
-            </div>
-
-                <div class="produto" data-categoria="boneca" data-idade="3">
-                <img src="img/c:\Users\User\Desktop\imagens site kids imperio\boneco-fofao-brinquedos-antigos.jpg" alt="boneco fofao">
-                <h4>Boneco fofao</h4>
-                <p>R$ 49,90</p>
-            </div>
-        </section>
-    </main>
-
-     <!-- Faixa no rodapé -->
-  <footer>
+<footer>
     <div class="footer-strip">
       <div class="footer-badge">K I D S</div>
     </div>
-  </footer>
+</footer>
 
-    <!-- link do JS -->
-    <script src="brinquedos.js"></script>
+<!-- 🔹 Modal de Login -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Iniciar Sessão</h2>
+    <button class="register-btn">Registrar-se</button>
+    <input type="email" placeholder="Endereço de e-mail">
+    <input type="password" placeholder="Palavra-passe">
+    <a href="#" class="forgot">esqueceu da senha?</a>
+    <button class="login-btn">Iniciar sessão</button>
+  </div>
+</div>
+<!-- 🔹 Modal do Carrinho -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close-cart">&times;</span>
+    <h2>Seu Carrinho</h2>
+    <p>Nenhum item no carrinho.</p>
+    <p><strong>Total: R$ 0,00</strong></p>
+  </div>
+</div>
+
+<script src="brinquedos.js"></script>
 </body>
 </html>
