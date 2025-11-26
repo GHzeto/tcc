@@ -1,4 +1,3 @@
-// Pega todos os checkboxes de categoria e idade
 const filtrosCategoria = document.querySelectorAll('.filtro-categoria');
 const filtrosIdade = document.querySelectorAll('.filtro-idade');
 const produtos = document.querySelectorAll('.produto');
@@ -37,4 +36,44 @@ function filtrar() {
 
 // Adiciona evento nos checkboxes
 filtrosCategoria.forEach(f => f.addEventListener('change', filtrar));
-filtrosIdade.forEach(f => f.addEventListener('change', filtrar));
+filtrosIdade.forEach(f => f.addEventListener('change', filtrar)); 
+
+// ===== MODAL DE LOGIN =====
+const loginBtn = document.getElementById('loginBtn');
+const modal = document.getElementById('loginModal');
+const closeBtn = document.querySelector('.close');
+
+loginBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  modal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// ===== MODAL DO CARRINHO =====
+const cartBtn = document.querySelector('.nav-link[href="#"]:nth-child(3)');
+const cartModal = document.getElementById('cartModal');
+const closeCart = document.querySelector('.close-cart');
+
+cartBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  cartModal.style.display = 'block';
+});
+
+closeCart.addEventListener('click', () => {
+  cartModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === cartModal) {
+    cartModal.style.display = 'none';
+  }
+});
